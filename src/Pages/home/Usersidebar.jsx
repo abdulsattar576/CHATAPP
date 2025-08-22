@@ -62,6 +62,7 @@ const Usersidebar = () => {
 
       {/* User List */}
       <div className='h-full overflow-y-auto px-3'>
+        
         {user?.map((userDetails) => (
           <div className='mb-4' key={userDetails._id}>
             <User userDetails={userDetails} />
@@ -72,9 +73,10 @@ const Usersidebar = () => {
       {/* Profile & Logout */}
       <div className='flex items-center justify-between p-3'>
         <div className="avatar flex items-center">
-          <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
+          {userProfile?<div className="ring-primary ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
             <img src={userProfile?.avatar} alt="User Avatar" />
-          </div>
+          </div>:<span className="loading loading-spinner text-secondary"></span>}
+          
           <h2 className='px-2 py-2 ml-2'>{userProfile?.fullName}</h2>
         </div>
         <button className="btn btn-primary btn-sm px-4" onClick={handleLogout}>Logout</button>
