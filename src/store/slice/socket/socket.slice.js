@@ -14,6 +14,8 @@ export const socketSlice = createSlice({
         query: {
           userId: action.payload,
         },
+        withCredentials: true, 
+  transports: ["websocket"],
       });
       state.socket = socket;
     },

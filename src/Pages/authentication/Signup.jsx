@@ -35,6 +35,7 @@ const SignUp = () => {
       return
     }
     const response=await dispatch(SignupUserThunk(SignUpData));
+    console.log(response.payload)
      if(response.payload.success){
 navigate("/")
      }
